@@ -9,75 +9,26 @@
 */
 
 module Blink(
-	input				CLK_50, //Defining the clock as an input (The onboard clock of the Kiwi is 50MHz)  
-	output	[7:0]		LED  //Defining the 8 built in LEDs on the Kiwi
-								  //Note: these definitions were made using the μLab Kiwi Project Generator.
+	input		CLK_50, //Defining the clock as an input (The onboard clock of the Kiwi is 50MHz)  
+	output	[7:0]	LED  	//Defining the 8 built in LEDs on the Kiwi
+				//Note: these definitions were made using the μLab Kiwi Project Generator.
 );
 
 
 reg [32:0] counter = 0; //Creating a register for counting the number of times the loop repeats itself
-reg state = 0;				//Creating a register for the LED's state (On or Off)
+reg state = 0;		//Creating a register for the LED's state (On or Off)
 assign LED[0] = state;  //Assign the LED's state to the state register
 
 
-always @ (posedge CLK_50)   //Each time a positive edge on the clock signal is detected, the code inside of the loop is executed
-begin                       //The loop iterates 50 million times a second, because the clock input is 50MHz
+always @ (posedge CLK_50)  	//Each time a positive edge on the clock signal is detected, the code inside of the loop is executed
+begin                      	//The loop iterates 50 million times a second, because the clock input is 50MHz
 	counter <= counter + 1; //Each time the loop iterates, the counter register is incremented by 1
 	if(counter == 50000000) //For a 1Hz clock (one state change per second) we need to count until 50,000,000 (because of the 50MHz clock),
-							//and when the counter hits 50,000,000, we change the state of the LED and reset the counter back to zero. 
+				//and when the counter hits 50,000,000, we change the state of the LED and reset the counter back to zero. 
 	begin
-		state <= ~state;	//Invert the state (If the state was 0, invert it to 1, vice versa)
-		counter <= 0;		//Reset the counter
+		state <= ~state; //Invert the state (If the state was 0, invert it to 1, vice versa)
+		counter <= 0;	 //Reset the counter
 	end	 	
 end
 endmodule
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-
-module Blink(
-
-//	input					CLK_50, //Defining the clock as an input (The onboard clock of the Kiwi is 50MHz)
-	output	[7:0]		LED	  //Defining the 8 built in LEDs on the Kiwi
-
-
-);
-
-
-
-reg [32:0] counter = 0; 		//Creating a register for counting the number of times the loop repeats itself
-
-reg state = 0;			  		//Creating a register for the LED's state (On or Off)
-
-assign LED[0] = state;	//Assign the LED's state to the state register
-
-
-always @ (posedge CLK_50) //Each time a positive edge on the clock signal is detected, the code inside of the loop is executed
-
-begin
-	counter <= counter + 1; //Each time the loop iterates, the counter register is incremented by 1
-	if(counter ==50000000)
-	begin
-	state <= ~state;
-	counter <= 0;
-	end
-	//state <= counter[26]; 	
-end
-
-
-endmodule
-*/
