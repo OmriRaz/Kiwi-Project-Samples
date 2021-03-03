@@ -1,0 +1,82 @@
+set_global_assignment -name TOP_LEVEL_ENTITY SevenSegmentCounter
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "00:45:10 March 4, 2021"
+set_global_assignment -name FAMILY "MAX 10"
+set_global_assignment -name DEVICE 10M08SCU169C8G
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 20.1.0
+set_global_assignment -name LAST_QUARTUS_VERSION "20.1.0 Lite Edition"
+set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name DEVICE_FILTER_PACKAGE UFBGA
+set_global_assignment -name DEVICE_FILTER_PIN_COUNT 169
+set_global_assignment -name DEVICE_FILTER_SPEED_GRADE 8
+set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 256
+set_global_assignment -name VERILOG_FILE top.v
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+
+#======================
+#CLOCK
+#======================
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CLK_50
+set_location_assignment PIN_H6 -to CLK_50
+
+
+#============================================================
+# SEG7
+#============================================================
+
+#IO Voltage definitions
+
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX0[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX0[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX0[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX0[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX0[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX0[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX0[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX1[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX1[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX1[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX1[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX1[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX1[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX1[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX2[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX2[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX2[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX2[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX2[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX2[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX2[6]
+
+#IO Pin Assignments
+
+set_location_assignment PIN_J12 -to HEX0[0]
+set_location_assignment PIN_J13 -to HEX0[1]
+set_location_assignment PIN_K13 -to HEX0[2]
+set_location_assignment PIN_K12 -to HEX0[3]
+set_location_assignment PIN_L13 -to HEX0[4]
+set_location_assignment PIN_M13 -to HEX0[5]
+set_location_assignment PIN_L12 -to HEX0[6]
+
+set_location_assignment PIN_L11 -to HEX1[0]
+set_location_assignment PIN_M10 -to HEX1[1]
+set_location_assignment PIN_M9 -to HEX1[2]
+set_location_assignment PIN_L10 -to HEX1[3]
+set_location_assignment PIN_K10 -to HEX1[4]
+set_location_assignment PIN_H13 -to HEX1[5]
+set_location_assignment PIN_K11 -to HEX1[6]
+
+set_location_assignment PIN_F9 -to HEX2[0]
+set_location_assignment PIN_F10 -to HEX2[1]
+set_location_assignment PIN_F12 -to HEX2[2]
+set_location_assignment PIN_F13 -to HEX2[3]
+set_location_assignment PIN_M11 -to HEX2[4]
+set_location_assignment PIN_M12 -to HEX2[5]
+set_location_assignment PIN_N12 -to HEX2[6]
+
+
+
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

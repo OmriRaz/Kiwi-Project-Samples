@@ -1,0 +1,4 @@
+QUARTUS_VERSION = "20.1"
+DATE = "00:45:10 March 4, 2021"
+PROJECT_REVISION = "SevenSegmentCounter"
+
