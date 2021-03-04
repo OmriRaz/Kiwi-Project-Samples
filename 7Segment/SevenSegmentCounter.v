@@ -1,11 +1,18 @@
+/*
+	7 Segment display counter
+	
+	This code counts from 0 to 9, on the builtin 7 Segment displays of the Kiwi.
+	
+	Written for the μLab Kiwi development board, by Omri Raz, on the 4th of March, 2021.
+*/
+
+
 module SevenSegmentCounter(
 
 	input		CLK_50,	//Defining the 50MHz Clock of the Kiwi as an input
 	output	[6:0]	HEX0,	//Defining the 7 Segment displays of the Kiwi as an output 
-	output	[6:0]	HEX1,
+	output	[6:0]	HEX1,	//Note: these definitions were made using the μLab Kiwi Project Generator.
 	output	[6:0]	HEX2
-
-
 );
 
 reg [32:0] count = 0;  //This register is used for counting the iterations of the main loop (In order to generate the 1Hz clock).  
