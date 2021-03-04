@@ -1,6 +1,6 @@
 Demos to complete and document:
 
-1) Slide switch demo project
+1) Slide switch demo project (finished)
 2) Hello world on ESP32 
 3) I2C, SPI, UART implementation on FPGA
 4) Nios II demo? (Not really neeeded)
