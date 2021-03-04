@@ -1,0 +1,9 @@
+Demos to complete and document:
+
+1) Slide switch demo project
+2) Hello world on ESP32 
+3) I2C, SPI, UART implementation on FPGA
+4) Nios II demo? (Not really neeeded)
+5) PWM Servo control / LED fade
+6) Basic logic gates documentation (Boolean functions, adders etc...)
+7) VGA state machine video generator
