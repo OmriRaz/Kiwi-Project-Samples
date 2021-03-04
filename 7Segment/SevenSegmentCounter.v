@@ -1,17 +1,17 @@
 module SevenSegmentCounter(
 
-	input		CLK_50,
-	output	[6:0]	HEX0,
+	input		CLK_50,	//Defining the 50MHz Clock of the Kiwi as an input
+	output	[6:0]	HEX0,	//Defining the 7 Segment displays of the Kiwi as an output 
 	output	[6:0]	HEX1,
 	output	[6:0]	HEX2
 
 
 );
 
-reg [32:0] count = 0;
-reg 	   state = 0;
-reg [3:0]  SegVal = 0;
-reg [6:0]  SegDat;
+reg [32:0] count = 0;  //This register is used for counting the iterations of the main loop (In order to generate the 1Hz clock)  
+reg 	   state = 0;  //1Hz clock, generated in the 50MHz always loop.
+reg [3:0]  SegVal = 0; //This register stores the current value which is being counted (the range for it is 0-9)
+reg [6:0]  SegDat;     //This register stores the actual data for each segment of the 7 segment display
 
 assign HEX0[0]=SegDat[0]; //assign each segment of the first 7 segment display to the appropriate bit of the segment data register
 assign HEX0[1]=SegDat[1];
