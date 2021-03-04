@@ -8,18 +8,12 @@ module SevenSegmentCounter(
 
 );
 
-reg [32:0] count = 0;  //This register is used for counting the iterations of the main loop (In order to generate the 1Hz clock)  
+reg [32:0] count = 0;  //This register is used for counting the iterations of the main loop (In order to generate the 1Hz clock).  
 reg 	   state = 0;  //1Hz clock, generated in the 50MHz always loop.
-reg [3:0]  SegVal = 0; //This register stores the current value which is being counted (the range for it is 0-9)
-reg [6:0]  SegDat;     //This register stores the actual data for each segment of the 7 segment display
+reg [3:0]  SegVal = 0; //This register stores the current value which is being counted (the range for it is 0-9).
+reg [6:0]  SegDat;     //This register stores the actual data for each segment of the 7 segment display.
 
-assign HEX0[0]=SegDat[0]; //assign each segment of the first 7 segment display to the appropriate bit of the segment data register
-assign HEX0[1]=SegDat[1];
-assign HEX0[2]=SegDat[2];
-assign HEX0[3]=SegDat[3];
-assign HEX0[4]=SegDat[4];
-assign HEX0[5]=SegDat[5];
-assign HEX0[6]=SegDat[6];
+assign HEX0[6:0]=SegDat[6:0]; //assign each segment of the first 7 segment display to the appropriate bit of the segment data register.
 
 always @ (posedge CLK_50)	//Each time a positive edge on the clock signal is detected, the code inside of the loop is executed
 begin                      	//The loop iterates 50 million times a second, because the clock input is 50MHz
@@ -38,7 +32,7 @@ begin                      	//The loop iterates 50 million times a second, becau
 end	
 always @ (state)	//Each time the state changes (1 time per second), 
 	case (SegVal)	//Check what's the value of the 7 segment counter, and save the appropriate value data to the SegDat register.
-		4'b0000:SegDat=7'b0111111;	// If the value is 0, save 1111110 to the segment data register //01111111
+		4'b0000:SegDat=7'b0111111;	// If the value is 0, save 1111110 to the segment data register 
 		4'b0001:SegDat=7'b0000110;	
 		4'b0010:SegDat=7'b1011011;	
 		4'b0011:SegDat=7'b1001111;	
