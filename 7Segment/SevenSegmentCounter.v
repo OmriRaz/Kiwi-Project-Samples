@@ -1,16 +1,15 @@
 module SevenSegmentCounter(
 
-	input				CLK_50,
-	output		[6:0]		HEX0,
-	output		[6:0]		HEX1,
-	output		[6:0]		HEX2
+	input		CLK_50,
+	output	[6:0]	HEX0,
+	output	[6:0]	HEX1,
+	output	[6:0]	HEX2
 
 
 );
 
-
 reg [32:0] count = 0;
-reg state = 0;
+reg 	   state = 0;
 reg [3:0]  SegVal = 0;
 reg [6:0]  SegDat;
 
