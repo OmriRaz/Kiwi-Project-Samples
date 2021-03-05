@@ -10,10 +10,10 @@
 
 module SlideSwitches(
 
-	input					CLK_50, //Defining the clock as an input (The onboard clock of the Kiwi is 50MHz)
-	input		[3:0]		SW,	  //Defining the 4 built in slide switches on the Kiwi.
-	output	[7:0]		LED	  //Defining the 8 built in LEDs on the Kiwi.
-									  //Note: these definitions were made using the μLab Kiwi Project Generator.
+	input		CLK_50, //Defining the clock as an input (The onboard clock of the Kiwi is 50MHz)
+	input	[3:0]	SW,	//Defining the 4 built in slide switches on the Kiwi.
+	output	[7:0]	LED	//Defining the 8 built in LEDs on the Kiwi.
+				//Note: these definitions were made using the μLab Kiwi Project Generator.
 
 );
 
