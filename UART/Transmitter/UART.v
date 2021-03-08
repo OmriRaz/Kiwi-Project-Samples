@@ -1,14 +1,13 @@
 module UART(
-
-	input				CLK_50,
-	input		[3:0]		SW,
-	input		[1:0]		BUTTON,
-	output		[6:0]		HEX0,
-	output		[6:0]		HEX1,
-	output		[6:0]		HEX2,
-	output		[7:0]		LED,
-	output				BaudRate,
-	output				TxD
+	input		CLK_50,
+	input	[3:0]	SW,
+	input	[1:0]	BUTTON,
+	output	[6:0]	HEX0,
+	output	[6:0]	HEX1,
+	output	[6:0]	HEX2,
+	output	[7:0]	LED,
+	output		BaudRate,
+	output		TxD
 
 );
 
