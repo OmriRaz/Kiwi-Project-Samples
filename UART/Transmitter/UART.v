@@ -1,3 +1,5 @@
+//WARNING: this code is incomplete and does not work properly.
+
 module UART(
 	input		CLK_50,
 	input	[3:0]	SW,
@@ -44,11 +46,11 @@ if(state == 4'b0000)	begin
 end
 
 case(LetterCount)
-	4'b0000: TxD_data <= 8'b01110101;
-	4'b0001: TxD_data <= 8'b01001100;
-	4'b0010: TxD_data <= 8'b01100001;
-	4'b0011: TxD_data <= 8'b01100010;
-	default: TxD_data <= 8'b01111110;
+	4'b0000: TxD_data <= 8'b01110101;	//u
+	4'b0001: TxD_data <= 8'b01001100;	//L
+	4'b0010: TxD_data <= 8'b01100001;	//a	
+	4'b0011: TxD_data <= 8'b01100010;	//b
+	default: TxD_data <= 8'b01111110;	//~
 endcase
 
 case(state)
