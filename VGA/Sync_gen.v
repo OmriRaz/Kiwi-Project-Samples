@@ -1,8 +1,8 @@
 module Sync_gen(
-    input 			 clk,
-    output 			 vga_h_sync,
-    output 			 vga_v_sync,
-    output reg 		 InDisplayArea,
+    input 	     clk,
+    output 	     vga_h_sync,
+    output 	     vga_v_sync,
+    output reg 	     InDisplayArea,
     output reg [9:0] CounterX,
     output reg [9:0] CounterY
   );
@@ -10,7 +10,7 @@ module Sync_gen(
   
   
 //=======================================//
-//				  Clock Divider		     //
+//		Clock Divider		 //
 //=======================================//
 //VGA @ 640x480 resolution @ 60Hz requires a pixel clock of 25.175Mhz.
 //The Kiwi has an Onboard 50Mhz oscillator, we can divide it and get a 25Mhz clock.
