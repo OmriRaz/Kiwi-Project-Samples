@@ -1,0 +1,124 @@
+set_global_assignment -name TOP_LEVEL_ENTITY Sound
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "00:00:38 May 7, 2021"
+set_global_assignment -name FAMILY "MAX 10"
+set_global_assignment -name DEVICE 10M08SCU169C8G
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 20.1.0
+set_global_assignment -name LAST_QUARTUS_VERSION "20.1.0 Lite Edition"
+set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name DEVICE_FILTER_PACKAGE UFBGA
+set_global_assignment -name DEVICE_FILTER_PIN_COUNT 169
+set_global_assignment -name DEVICE_FILTER_SPEED_GRADE 8
+set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 256
+set_global_assignment -name VERILOG_FILE top.v
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+
+#======================
+#CLOCK
+#======================
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CLK_50
+set_location_assignment PIN_H6 -to CLK_50
+
+
+#======================
+#BUTTON
+#======================
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to BUTTON[0]
+set_location_assignment PIN_B9 -to BUTTON[0]
+
+#============================================================
+# SW
+#============================================================
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[3]
+
+set_location_assignment PIN_M2 -to SW[0]
+set_location_assignment PIN_N2 -to SW[1]
+set_location_assignment PIN_N3 -to SW[2]
+set_location_assignment PIN_M4 -to SW[3]
+
+
+#============================================================
+# GPIO, GPIO connect to GPIO Default
+#============================================================
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[7]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[8]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[9]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[10]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[11]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[12]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[13]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[14]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[15]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[16]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[17]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[18]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[19]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[20]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[21]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[22]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[23]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[24]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[25]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[26]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[27]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[28]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[29]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[30]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[31]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[32]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[33]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[34]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[35]
+set_location_assignment PIN_B1 -to GPIO[0]
+set_location_assignment PIN_B2 -to GPIO[1]
+set_location_assignment PIN_A2 -to GPIO[2]
+set_location_assignment PIN_B3 -to GPIO[3]
+set_location_assignment PIN_A3 -to GPIO[4]
+set_location_assignment PIN_B4 -to GPIO[5]
+set_location_assignment PIN_A4 -to GPIO[6]
+set_location_assignment PIN_B5 -to GPIO[7]
+set_location_assignment PIN_A5 -to GPIO[8]
+set_location_assignment PIN_B6 -to GPIO[9]
+set_location_assignment PIN_A6 -to GPIO[10]
+set_location_assignment PIN_B7 -to GPIO[11]
+set_location_assignment PIN_A7 -to GPIO[12]
+set_location_assignment PIN_B10 -to GPIO[13]
+set_location_assignment PIN_A8 -to GPIO[14]
+set_location_assignment PIN_B11 -to GPIO[15]
+set_location_assignment PIN_A9 -to GPIO[16]
+set_location_assignment PIN_B12 -to GPIO[17]
+set_location_assignment PIN_A10 -to GPIO[18]
+set_location_assignment PIN_B13 -to GPIO[19]
+set_location_assignment PIN_A11 -to GPIO[20]
+set_location_assignment PIN_C1 -to GPIO[21]
+set_location_assignment PIN_A12 -to GPIO[22]
+set_location_assignment PIN_C2 -to GPIO[23]
+set_location_assignment PIN_C9 -to GPIO[24]
+set_location_assignment PIN_C10 -to GPIO[25]
+set_location_assignment PIN_C11 -to GPIO[26]
+set_location_assignment PIN_C12 -to GPIO[27]
+set_location_assignment PIN_C13 -to GPIO[28]
+set_location_assignment PIN_D1 -to GPIO[29]
+set_location_assignment PIN_D12 -to GPIO[30]
+set_location_assignment PIN_E13 -to GPIO[31]
+set_location_assignment PIN_G12 -to GPIO[32]
+set_location_assignment PIN_G13 -to GPIO[33]
+set_location_assignment PIN_D9 -to GPIO[34]
+set_location_assignment PIN_D11 -to GPIO[35]
+
+
+
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
