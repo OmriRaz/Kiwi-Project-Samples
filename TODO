@@ -7,3 +7,17 @@ Demos to complete and document:
 5) PWM Servo control / LED fade
 6) Basic logic gates documentation (Boolean functions, adders etc...)
 7) VGA state machine video generator
+
+
+1) Schematic BDF tutorial blink
+2) installation of Quartus
+3) Blink verilog
+4) Logic turth tables 
+5) Simulation (ModelSim / Quartus)
+12) Sync logic (Flip Flops, Counters)
+13) State Machine
+14) Memory Interface (check how many memory interfaces the FPGA supports)
+15) PLL
+16) Verilog modules, I/Os
+17) CPU tutorial (nand2tetris)
+18) SignalTap Tutorial
