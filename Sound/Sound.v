@@ -1,5 +1,5 @@
 module Sound(
-	input			CLK_50,
+	input		CLK_50,
 	input	[3:0]	SW,
 	input	[1:0]	BUTTON,
 	inout	[35:0]	GPIO
