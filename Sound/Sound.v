@@ -1,21 +1,20 @@
 module Sound(
-
-	input					  CLK_50,
-	input		[3:0]		SW,
-	input		[1:0]		BUTTON,
-	inout		[35:0]	GPIO
-
-
+	input			CLK_50,
+	input	[3:0]	SW,
+	input	[1:0]	BUTTON,
+	inout	[35:0]	GPIO
 );
 
 reg [32:0] counter = 0;
-reg Speaker = 0;
-assign GPIO[20] = Speaker;
 reg [20:0] note = 56818; //default A
-reg [6:0] notepos = 5;
-reg [3:0] switchpos;
+reg [6:0]  notepos = 5;
+reg [3:0]  switchpos;
 reg [32:0] notetime = 0;
+assign GPIO[20] = Speaker;
+reg Speaker = 0;
 reg state = 0;
+	
+	
 always @(posedge CLK_50) begin
 	case(notepos)
 		0: note = 56818; //A
@@ -50,12 +49,11 @@ begin
 	begin
 		state <= ~state; 
 		notetime <= 0;
-		
 		if(notepos <= 11)
 			notepos = notepos + 1;
 		else
 			notepos = 0;
-			break;
+		break;
 	end	 	
 end
 endmodule
