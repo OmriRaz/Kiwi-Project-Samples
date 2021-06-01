@@ -15,7 +15,7 @@ module Blink(
 );
 
 
-reg [32:0] counter = 0; //Creating a register for counting the number of times the loop repeats itself
+reg [31:0] counter = 0; //Creating a register for counting the number of times the loop repeats itself
 reg state = 0;		//Creating a register for the LED's state (On or Off)
 assign LED[0] = state;  //Assign the LED's state to the state register
 assign LED[7:1] = 7'b1111111; //turn off the unused LEDs (1 means that the led is OFF)
