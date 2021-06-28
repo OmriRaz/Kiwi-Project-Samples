@@ -1,13 +1,12 @@
 module VGA(
-    input           CLK_50,
-    input	[3:0]   SW,
-    output	[7:0]   LED,
-    output	[2:0]   RED,
-    output	[2:0]   GREEN,
-    output	[1:0]   BLUE,
-    output          h_sync,
-    output          v_sync
-	
+    input             CLK_50,
+    input    [3:0]    SW,
+    output   [7:0]    LED,
+    output   [2:0]    RED,
+    output   [2:0]    GREEN,
+    output   [1:0]    BLUE,
+    output            h_sync,
+    output            v_sync	
 );
 
 wire InDisplayArea;
@@ -17,8 +16,6 @@ wire RowCounter;
 reg [2:0] R_val = 3'b000;
 reg [2:0] G_val = 3'b000;
 reg [1:0] B_val = 2'b00;
-reg [8:0] redvalue = 0;
-	
 
 assign RED[2:0] = R_val[2:0];
 assign GREEN[2:0] = G_val[2:0];
@@ -43,7 +40,7 @@ reg [3:0] count = 4'b0000;
 
 
 //=============================//
-//	 Clock Divider         //
+//       Clock Divider         //
 //=============================//
 
 reg [32:0] counter = 0; 
@@ -67,25 +64,19 @@ always @(state) begin
 end
 //==========================//
 
-
 always @(posedge CLK_50)
-	begin
-		if(InDisplayArea) begin
-			if((CounterX >= 100) & (CounterX <= 300) & (CounterY > 100) & (CounterY < 300)) begin
-				R_val = 3'b111;
-				G_val = 3'b111;
-				B_val = 2'b11;
-				end
-				else begin
-				R_val = 3'b000;
-				G_val = 3'b000;
-				B_val = 2'b00;
-			end
-		end
-		else begin
-			R_val = 3'b000;
-			G_val = 3'b000;
-			B_val = 2'b00;
-		end
-		end
+begin
+    if(InDisplayArea) begin
+        if((CounterX >= 100) & (CounterX <= 300) & (CounterY > 100) & (CounterY < 300)) begin
+            R_val = 3'b111;
+            G_val = 3'b111;
+            B_val = 2'b11;
+        end
+        else begin
+            R_val = 3'b000;
+            G_val = 3'b000;
+            B_val = 2'b00;
+        end
+    end
+end
 endmodule
