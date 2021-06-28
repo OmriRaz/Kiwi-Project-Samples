@@ -1,13 +1,12 @@
 module VGA(
-
-	input		CLK_50,
-	input	[3:0]	SW,
-	output	[7:0]	LED,
-	output	[2:0] 	RED,
-	output	[2:0]	GREEN,
-	output	[1:0]	BLUE,
-	output   	h_sync,
-	output		v_sync
+    input           CLK_50,
+    input	[3:0]   SW,
+    output	[7:0]   LED,
+    output	[2:0]   RED,
+    output	[2:0]   GREEN,
+    output	[1:0]   BLUE,
+    output          h_sync,
+    output          v_sync
 	
 );
 
