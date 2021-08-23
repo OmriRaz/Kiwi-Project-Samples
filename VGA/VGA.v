@@ -20,49 +20,21 @@ reg [1:0] B_val = 2'b00;
 assign RED[2:0] = R_val[2:0];
 assign GREEN[2:0] = G_val[2:0];
 assign BLUE[1:0] = B_val[1:0];
-
-
-Sync_gen Sync(
-      .clk(CLK_50),
-      .vga_h_sync(h_sync),
-      .vga_v_sync(v_sync),
-      .CounterX(CounterX),
-      .CounterY(CounterY),
-      .InDisplayArea(InDisplayArea)
-);
-
-reg [7:0] pixel = 8'b00000000;
-/*assign RED[2:0] = pixel [7:5];
+	
+/*reg [7:0] pixel = 8'b00000000;
+assign RED[2:0] = pixel [7:5];
 assign GREEN[2:0] = pixel [4:2];
 assign BLUE[1:0] = pixel [1:0];*/
-reg [3:0] count = 4'b0000;
 
+Sync_gen Sync(
+    .clk(CLK_50),
+    .vga_h_sync(h_sync),
+    .vga_v_sync(v_sync),
+    .CounterX(CounterX),
+    .CounterY(CounterY),
+    .InDisplayArea(InDisplayArea)
+);
 
-
-//=============================//
-//       Clock Divider         //
-//=============================//
-
-reg [32:0] counter = 0; 
-reg state = 0;		
-
-always @ (posedge CLK_50) 
-begin                     
-	counter <= counter + 1;
-	if(counter == 50000) 			
-	begin
-		state <= ~state; 
-		counter <= 0;	 
-	end	 	
-end
-
-always @(state) begin
-	if(count < 4'b0100)
-		count = count + 1;
-	else 
-		count = 4'b000;
-end
-//==========================//
 
 always @(posedge CLK_50)
 begin
